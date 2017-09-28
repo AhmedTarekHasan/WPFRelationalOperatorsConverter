@@ -1,0 +1,132 @@
+<Window x:Class="DevelopmentSimplyPut.RelationalOperatorsConverterDemo.Demo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:converters="clr-namespace:DevelopmentSimplyPut.RelationalOperatorsConverter;assembly=RelationalOperatorsConverter"
+        Title="Development Simply Put - Relational Operators Converter Demo" Width="900" Height="430" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <converters:RelationalOperatorsToVisibilityConverter x:Key="RelationalOperatorsToVisibilityConverter" />
+        <Style TargetType="Border">
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="BorderBrush" Value="Gray" />
+        </Style>
+    </Window.Resources>
+    <Grid Margin="12,5,5,5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <TextBlock Margin="5,5,0,5" Grid.Row="0" Grid.Column="0" Text="Write some text here:" />
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4">
+            <TextBox Margin="5,5,5,5" Name="StringValue" Width="650" MaxLength="20" />
+            <TextBlock Margin="5,5,5,5" Text="{Binding ElementName=StringValue, Path=Text.Length}" />
+        </StackPanel>
+        <Border Grid.Row="1" Grid.Column="0">
+            <StackPanel ToolTip="ConverterParameter='equal|0'" Width="170" Height="170" HorizontalAlignment="Center" VerticalAlignment="Center" Background="White">
+                <TextBlock Margin="0,75,0,0" HorizontalAlignment="Center" Text="Length = 0" FontSize="20" Foreground="Black" />
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="1" Grid.Column="0">
+            <StackPanel ToolTip="ConverterParameter='equal|0'" Width="170" Height="170" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Red" Visibility="{Binding ElementName=StringValue, Path=Text.Length, Converter={StaticResource RelationalOperatorsToVisibilityConverter}, ConverterParameter='equal|0'}">
+                <TextBlock Margin="0,75,0,0" HorizontalAlignment="Center" Text="Length = 0" FontSize="20" FontWeight="Bold" Foreground="White" />
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="1" Grid.Column="1">
+            <StackPanel ToolTip="ConverterParameter='not equal|0'" Width="170" Height="170" HorizontalAlignment="Center" VerticalAlignment="Center" Background="White">
+                <TextBlock Margin="0,75,0,0" HorizontalAlignment="Center" Text="Length != 0" FontSize="20" Foreground="Black" />
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="1" Grid.Column="1">
+            <StackPanel ToolTip="ConverterParameter='not equal|0'" Width="170" Height="170" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Red" Visibility="{Binding ElementName=StringValue, Path=Text.Length, Converter={StaticResource RelationalOperatorsToVisibilityConverter}, ConverterParameter='not equal|0'}">
+                <TextBlock Margin="0,75,0,0" HorizontalAlignment="Center" Text="Length != 0" FontSize="20" FontWeight="Bold" Foreground="White" />
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="1" Grid.Column="2">
+            <StackPanel ToolTip="ConverterParameter='greater than|1'" Width="170" Height="170" HorizontalAlignment="Center" VerticalAlignment="Center" Background="White">
+                <TextBlock Margin="0,75,0,0" HorizontalAlignment="Center" Text="Length > 1" FontSize="20" Foreground="Black" />
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="1" Grid.Column="2">
+            <StackPanel ToolTip="ConverterParameter='greater than|1'" Width="170" Height="170" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Red" Visibility="{Binding ElementName=StringValue, Path=Text.Length, Converter={StaticResource RelationalOperatorsToVisibilityConverter}, ConverterParameter='greater than|1'}">
+                <TextBlock Margin="0,75,0,0" HorizontalAlignment="Center" Text="Length > 1" FontSize="20" FontWeight="Bold" Foreground="White" />
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="1" Grid.Column="3">
+            <StackPanel ToolTip="ConverterParameter='greater than or equal|1'" Width="170" Height="170" HorizontalAlignment="Center" VerticalAlignment="Center" Background="White">
+                <TextBlock Margin="0,75,0,0" HorizontalAlignment="Center" Text="Length >= 1" FontSize="20" Foreground="Black" />
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="1" Grid.Column="3">
+            <StackPanel ToolTip="ConverterParameter='greater than or equal|1'" Width="170" Height="170" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Red" Visibility="{Binding ElementName=StringValue, Path=Text.Length, Converter={StaticResource RelationalOperatorsToVisibilityConverter}, ConverterParameter='greater than or equal|1'}">
+                <TextBlock Margin="0,75,0,0" HorizontalAlignment="Center" Text="Length >= 1" FontSize="20" FontWeight="Bold" Foreground="White" />
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="1" Grid.Column="4">
+            <StackPanel ToolTip="ConverterParameter='less than|4'" Width="170" Height="170" HorizontalAlignment="Center" VerticalAlignment="Center" Background="White">
+                <TextBlock Margin="0,75,0,0" HorizontalAlignment="Center" Text="Length &lt; 4" FontSize="20" Foreground="Black" />
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="1" Grid.Column="4">
+            <StackPanel ToolTip="ConverterParameter='less than|4'" Width="170" Height="170" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Red" Visibility="{Binding ElementName=StringValue, Path=Text.Length, Converter={StaticResource RelationalOperatorsToVisibilityConverter}, ConverterParameter='less than|4'}">
+                <TextBlock Margin="0,75,0,0" HorizontalAlignment="Center" Text="Length &lt; 4" FontSize="20" FontWeight="Bold" Foreground="White" />
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="2" Grid.Column="0">
+            <StackPanel ToolTip="ConverterParameter='less than or equal|4'" Width="170" Height="170" HorizontalAlignment="Center" VerticalAlignment="Center" Background="White">
+                <TextBlock Margin="0,75,0,0" HorizontalAlignment="Center" Text="Length &lt;= 4" FontSize="20" Foreground="Black" />
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="2" Grid.Column="0">
+            <StackPanel ToolTip="ConverterParameter='less than or equal|4'" Width="170" Height="170" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Red" Visibility="{Binding ElementName=StringValue, Path=Text.Length, Converter={StaticResource RelationalOperatorsToVisibilityConverter}, ConverterParameter='less than or equal|4'}">
+                <TextBlock Margin="0,75,0,0" HorizontalAlignment="Center" Text="Length &lt;= 4" FontSize="20" FontWeight="Bold" Foreground="White" />
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="2" Grid.Column="1">
+            <StackPanel ToolTip="ConverterParameter='between1|5|8'" Width="170" Height="170" HorizontalAlignment="Center" VerticalAlignment="Center" Background="White">
+                <TextBlock Margin="0,75,0,0" HorizontalAlignment="Center" Text="5 &lt; Length &lt; 8" FontSize="20" Foreground="Black" />
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="2" Grid.Column="1">
+            <StackPanel ToolTip="ConverterParameter='between1|5|8'" Width="170" Height="170" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Red" Visibility="{Binding ElementName=StringValue, Path=Text.Length, Converter={StaticResource RelationalOperatorsToVisibilityConverter}, ConverterParameter='between1|5|8'}">
+                <TextBlock Margin="0,75,0,0" HorizontalAlignment="Center" Text="5 &lt; Length &lt; 8" FontSize="20" FontWeight="Bold" Foreground="White" />
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="2" Grid.Column="2">
+            <StackPanel ToolTip="ConverterParameter='between3|5|8'" Width="170" Height="170" HorizontalAlignment="Center" VerticalAlignment="Center" Background="White">
+                <TextBlock Margin="0,75,0,0" HorizontalAlignment="Center" Text="5 &lt;= Length &lt; 8" FontSize="20" Foreground="Black" />
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="2" Grid.Column="2">
+            <StackPanel ToolTip="ConverterParameter='between3|5|8'" Width="170" Height="170" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Red" Visibility="{Binding ElementName=StringValue, Path=Text.Length, Converter={StaticResource RelationalOperatorsToVisibilityConverter}, ConverterParameter='between3|5|8'}">
+                <TextBlock Margin="0,75,0,0" HorizontalAlignment="Center" Text="5 &lt;= Length &lt; 8" FontSize="20" FontWeight="Bold" Foreground="White" />
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="2" Grid.Column="3">
+            <StackPanel ToolTip="ConverterParameter='between4|5|8'" Width="170" Height="170" HorizontalAlignment="Center" VerticalAlignment="Center" Background="White">
+                <TextBlock Margin="0,75,0,0" HorizontalAlignment="Center" Text="5 &lt; Length &lt;= 8" FontSize="20" Foreground="Black" />
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="2" Grid.Column="3">
+            <StackPanel ToolTip="ConverterParameter='between4|5|8'" Width="170" Height="170" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Red" Visibility="{Binding ElementName=StringValue, Path=Text.Length, Converter={StaticResource RelationalOperatorsToVisibilityConverter}, ConverterParameter='between4|5|8'}">
+                <TextBlock Margin="0,75,0,0" HorizontalAlignment="Center" Text="5 &lt; Length &lt;= 8" FontSize="20" FontWeight="Bold" Foreground="White" />
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="2" Grid.Column="4">
+            <StackPanel ToolTip="ConverterParameter='between2|5|8'" Width="170" Height="170" HorizontalAlignment="Center" VerticalAlignment="Center" Background="White">
+                <TextBlock Margin="0,75,0,0" HorizontalAlignment="Center" Text="5 &lt;= Length &lt;= 8" FontSize="20" Foreground="Black" />
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="2" Grid.Column="4">
+            <StackPanel ToolTip="ConverterParameter='between2|5|8'" Width="170" Height="170" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Red" Visibility="{Binding ElementName=StringValue, Path=Text.Length, Converter={StaticResource RelationalOperatorsToVisibilityConverter}, ConverterParameter='between2|5|8'}">
+                <TextBlock Margin="0,75,0,0" HorizontalAlignment="Center" Text="5 &lt;= Length &lt;= 8" FontSize="20" FontWeight="Bold" Foreground="White" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

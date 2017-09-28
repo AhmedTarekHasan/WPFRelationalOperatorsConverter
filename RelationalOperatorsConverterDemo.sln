@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RelationalOperatorsConverterDemo", "RelationalOperatorsConverterDemo\RelationalOperatorsConverterDemo.csproj", "{1F1A2B3C-CEE1-4427-B6F2-2F61D2721083}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RelationalOperatorsConverter", "RelationalOperatorsConverter\RelationalOperatorsConverter.csproj", "{13F5E401-2ED4-4C48-83A5-6C0B78553760}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1F1A2B3C-CEE1-4427-B6F2-2F61D2721083}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F1A2B3C-CEE1-4427-B6F2-2F61D2721083}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F1A2B3C-CEE1-4427-B6F2-2F61D2721083}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F1A2B3C-CEE1-4427-B6F2-2F61D2721083}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13F5E401-2ED4-4C48-83A5-6C0B78553760}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13F5E401-2ED4-4C48-83A5-6C0B78553760}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13F5E401-2ED4-4C48-83A5-6C0B78553760}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13F5E401-2ED4-4C48-83A5-6C0B78553760}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
